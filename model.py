@@ -15,10 +15,14 @@ class PlainTextDataset(Dataset):
         self.plain_text = [text for text in text_list if len(text) > 0]
 
         # Get Bag of Words document
-        self.vectorizer = vectorizer
-        vectorized_input = self.vectorizer.fit_transform(self.plain_text)
-        vectorized_input = vectorized_input.toarray()                     # scipy sparse matrix to numpy array
-        
+        # self.vectorizer = vectorizer
+        # vectorized_input = self.vectorizer.fit_transform(self.plain_text)
+        # vectorized_input = vectorized_input.toarray()                     # scipy sparse matrix to numpy array
+        self.vectorizer = vectorizer_temp
+        vectorized_input = self.vectorizer.fit_transform(self.plain_text)_temp
+        vectorized_input = vectorized_input.toarray()_temp                     # scipy sparse matrix to numpy array
+
+
         # Exclude empty documents from data
         empty_doc_num = np.where(vectorized_input.sum(axis=1) == 0)[0]
         vectorized_input = np.delete(vectorized_input, empty_doc_num, axis=0)
