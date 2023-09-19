@@ -18,9 +18,9 @@ class PlainTextDataset(Dataset):
         # self.vectorizer = vectorizer
         # vectorized_input = self.vectorizer.fit_transform(self.plain_text)
         # vectorized_input = vectorized_input.toarray()                     # scipy sparse matrix to numpy array
-        self.vectorizer = vectorizer_temp
-        vectorized_input = self.vectorizer.fit_transform(self.plain_text)_temp
-        vectorized_input = vectorized_input.toarray()_temp                     # scipy sparse matrix to numpy array
+        self.vectorizer = vectorizer
+        vectorized_input = self.vectorizer.fit_transform(self.plain_text)
+        vectorized_input = vectorized_input.toarray()                       # scipy sparse matrix to numpy array
 
 
         # Exclude empty documents from data
